@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+#
+# "CHANGES" library 
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
 from ElementsT1 import *
 
 from sys import platform as _platform
