@@ -4,7 +4,7 @@
 #
 #  brings chinese philosophy to life
 #
-# (C) Ivan Makarov, Oleksandr Golovchnsky 2015-2016
+# (C) Ivan Makarov, Oleksandr Golovchansky 2015-2016
 # Email: ivmakarov@yahoo.com
 #
 from ElementsT1 import *
