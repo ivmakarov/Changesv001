@@ -1,4 +1,4 @@
-Copyright (c) 2015 Ivan Makarov, Olexandr Golovchansky
+Copyright (c) 2015-2016 Ivan Makarov, Olexandr Golovchansky
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
