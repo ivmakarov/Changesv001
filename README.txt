@@ -3,7 +3,7 @@
 #
 #  brings chinese philosophy to life
 #
-# (C) Ivan Makarov, Oleksandr Golovchnsky 2015-2016
+# (C) Ivan Makarov, Oleksandr Golovchansky 2015-2016
 # Email: ivmakarov@yahoo.com
 #
 "CHANGES" library is a software designed to operate with terms, concepts and ideas of chinese philosophy and 
