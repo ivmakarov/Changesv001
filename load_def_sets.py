@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# "CHANGES" library 
+# "CHANGES" library  - script loading default sets
 #
 #  brings chinese philosophy to life
 #
