@@ -1,0 +1,220 @@
+#
+# "CHANGES" library  - - Documentation - Gui Hun problem-
+#					solution example
+#		Iteration over the group of hexogramms
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015
+# Email: ivmakarov@yahoo.com
+#
+
+
+( console mode )
+
+1. we want to find Gui Hun hexagrams - such that change of 5th yao gives equal upper and lower gua in resulting hexagramm.
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+ 
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+
+
+2. create sets for original hexagrams, work hexagrams  and results:
+
+hset = Elements()
+
+work = Elements()
+
+res = Elements()
+
+3. add all hexagrams original hexagrams set:
+
+hset.add_all_from_set(Hextable)
+
+4. make iteration over it's elements:
+
+for e in hset.elements :
+  work.basic_copy(hset.elements[e].Name,hset.elements[e])
+  work.change_yao(hset.elements[e].Name, "ch5th"+hset.elements[e].Name,5)
+  if work.if_El_equal_gua("ch5th"+hset.elements[e].Name) :
+      res.basic_copy("GuiHun "+hset.elements[e].Name,hset.elements[e])
+      
+  this is general example for iteration in any elements set:
+  for e in hset.elements :
+  this sets iterator e over hset.elements. 
+  each element in each iteration is adressed : hset.elements[e]
+  it's name is adressed : hset.elements[e].Name
+  other properties are adressed the same way,
+  chinese name for example : hset.elements[e].ChName
+  
+  in each iteration:
+  
+  1. copy to work original element under his own name,
+  first parametr is the name and second is element: 
+  
+    work.basic_copy(hset.elements[e].Name,hset.elements[e])
+    
+  2. change 5th yao and save as "ch5th"+ name :
+  
+    work.change_yao(hset.elements[e].Name, "ch5th"+hset.elements[e].Name,5)
+    
+  3. if resulting element have equal upper and lower gua  - copy originalal element to results:
+  
+    if work.if_El_equal_gua("ch5th"+hset.elements[e].Name) :
+      res.basic_copy("GuiHun"+hset.elements[e].Name,hset.elements[e])
+      
+5. after that print results:
+
+print res 
+
+you get:
+
+    GuiHunGu           
+  18           
+      ䷑           
+      蠱           
+    -----   
+    -- --   
+    -- --   
+    -----   
+    -----   
+    -- --   
+      蠱           
+                 
+      Gu           
+      Decay           
+      Гу           
+      порча           
+
+    GuiHunDayou           
+  14           
+      ䷍           
+      大有           
+    -----   
+    -- --   
+    -----   
+    -----   
+    -----   
+    -----   
+      大有           
+                 
+      Dayou           
+      Great Possetion           
+      Да-ю           
+      большое обладание           
+
+    GuiHunTongren           
+  13           
+      ䷌           
+      同人           
+    -----   
+    -----   
+    -----   
+    -----   
+    -- --   
+    -----   
+      同人           
+                 
+      Tongren           
+      Fellowship           
+      Тун-Жен           
+      компаньоны           
+
+    GuiHunShi           
+  7           
+      ䷆           
+      師           
+    -- --   
+    -- --   
+    -- --   
+    -- --   
+    -----   
+    -- --   
+      師           
+                 
+      Shi           
+      Army           
+      Ши           
+      войско           
+
+    GuiHunGuimei           
+  54           
+      ䷵           
+      歸妹           
+    -- --   
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -----   
+      歸妹           
+                 
+      Guimei           
+      Merrying Sister           
+      Гуй-мэй           
+      выдавать сестру замуж           
+
+    GuiHunSui           
+  17           
+      ䷐           
+      隨           
+    -- --   
+    -----   
+    -----   
+    -- --   
+    -- --   
+    -----   
+      隨           
+                 
+      Sui           
+      Following           
+      Суй           
+      следование           
+
+    GuiHunBii           
+  8           
+      ䷇           
+      比           
+    -- --   
+    -----   
+    -- --   
+    -- --   
+    -- --   
+    -- --   
+      比           
+                 
+      Bii           
+      Loyalty           
+      Би           
+      верность           
+
+    GuiHunJian           
+  53           
+      ䷴           
+      漸           
+    -----   
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -- --   
+      漸           
+                 
+      Jian           
+      Gradually           
+      Цзянь           
+      постепенность           
+
+total elements:8
+
+the same result can be obtained by generating symmetric hexagrams and changing 5th yao for them.
+    
+
+

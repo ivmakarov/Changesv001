@@ -1,0 +1,144 @@
+#
+# "CHANGES" library  - - Documentation - Devination
+#		Dice method and Coins Method
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+( console mode )
+
+1. first load library and default sets:
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+
+(in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+ 
+ 
+2. form elements group
+
+PP4 = Elements()
+
+3. Dice devination - use 
+
+PP4.dice( Name, octdice1, octdice2, hexdice, Bset, Hset):
+
+where Name  - name of resulting hexagram, like "h1"
+
+2 octagonal dice - integers from 1 to 8
+1 hexagonal dice  - integer from 1 to 6
+
+octagonal dice should have different color for upper and lower trigrams
+
+trow dice and enter result as indicated.
+ then enter baguaset and Hextable  - sets of thregrams and hexagrams.
+ 
+4.then print result : 
+print PP4
+
+5. Coins devination - use 
+
+PP4.coins( Name, c1,c2,c3, c4,c5,c6, c7,c8,c9, c10,c11,c12, c13,c14,c15, c16,c17,c18,Hset )
+
+where Name  - name of resulting hexagram, like "h1"
+
+trow 3 coins 6 times - 1 for each line and enter results after the Name, separated by comma - 
+1 - for Head and 0 - for tail
+18 numbers in total, then enter the name of hexagram set - Hextable
+
+6.then print result : 
+print PP4
+
+7. You can simulate dice and coins using random number generator.
+use for dice simulation ( for linux, MacOs):
+
+PP4.sim_dice_fw("h1", bagua, Hextable)
+
+you get:
+
+simulating dice... 
+7.0 8.0 2.0 
+
+8. print result:
+
+print PP4
+    h1           
+  49           
+      ䷰           
+      革           
+    -- --   
+    -----   
+    -----   
+    -----   
+    -- -- o   
+    -----   
+      革           
+                 
+      Ge           
+      Revolution           
+      Гэ           
+      револиция           
+
+total elements:1
+
+9. for coins simulation:
+
+PP4.sim_coins_fw("h1",Hextable)
+
+you get :
+
+simulating coins... 
+
+Tail
+Head
+Head
+Tail
+Tail
+Tail
+Tail
+Head
+Head
+Tail
+Head
+Tail
+Head
+Tail
+Head
+Head
+Head
+Tail
+
+10. print result:
+
+print PP4
+    h1           
+  16           
+      ䷏           
+      豫           
+    -- --   
+    -- --   
+    -----   
+    -- --   
+    -- -- o   
+    -- --   
+      豫           
+                 
+      Yu           
+      Joy           
+      Юй           
+      радость           
+
+total elements:1
+
+
+
+

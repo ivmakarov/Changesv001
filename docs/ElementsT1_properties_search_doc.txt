@@ -1,0 +1,257 @@
+#
+# "CHANGES" library  - - Documentation - Search in properties of elements
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+( console mode )
+
+Here the functions needed to seach in element's properties in the set are described.
+
+We want to find given string in properties of a set of elements, like hexagrams. 
+This is useful if you are looking for a hexagram which might describe given event or condition.
+
+
+1. first load library and default sets:
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+ 
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+
+
+2. create a group of elements, add some hexagrams here and assign them some properties:
+
+PP4 = Elements()
+
+
+PP4.add_byN_from_set("h1",63,Hextable)
+
+PP4.add_byN_from_set("h2",64,Hextable)
+
+PP4.add_ElProperty("h1","phase","phase1")
+
+PP4.add_ElProperty("h1","color","black")
+
+PP4.add_ElProperty("h2","color","white")
+
+
+3. creat an element group for search results : 
+
+P1 = Elements()
+
+4. search vor a word "black" in set PP4 - "FN" -would be added to the name of found element :
+
+P1.find_in_set_properties("black","FN",PP4)
+
+
+you get :
+
+found in elenement: h1
+
+in property: color
+
+value; black
+
+    FNh1           
+  63           
+      ䷾           
+      既濟           
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -----   
+      既濟           
+                 
+      Jiji           
+      Finished           
+      Цзи-цзи           
+      Завершенность           
+ color :  black  
+  phase :  phase1  
+ 
+5. search vor a word "white" :
+
+ P1.find_in_set_properties("white","FN",PP4)
+ 
+ you get :
+ 
+found in elenement: h2
+
+in property: color
+
+value; white
+
+    FNh2           
+  64           
+      ䷿           
+      未濟           
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -- --   
+      未濟           
+                 
+      Weiji           
+      Unfinished           
+      Вэй-цзи           
+      Незавершенность           
+ color :  white  
+ 
+
+6. look for letters "ph" :
+
+P1.find_in_set_properties("ph","FN",PP4)
+
+
+found in elenement: h1
+
+in property: phase
+
+value; phase1
+
+    FNh1           
+  63           
+      ䷾           
+      既濟           
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -----   
+      既濟           
+                 
+      Jiji           
+      Finished           
+      Цзи-цзи           
+      Завершенность           
+ color :  black  
+  phase :  phase1  
+ 
+7. look for "color" :
+
+P1.find_in_set_properties("color","FN",PP4)
+
+you get 2 elements wich have property "color":
+
+found in elenement: h2
+
+in property: color
+
+value; white
+
+    FNh2           
+  64           
+      ䷿           
+      未濟           
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -- --   
+      未濟           
+                 
+      Weiji           
+      Unfinished           
+      Вэй-цзи           
+      Незавершенность           
+ color :  white  
+ 
+found in elenement: h1
+
+in property: color
+
+value; black
+
+    FNh1           
+  63           
+      ䷾           
+      既濟           
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -----   
+      既濟           
+                 
+      Jiji           
+      Finished           
+      Цзи-цзи           
+      Завершенность           
+ color :  black  
+  phase :  phase1  
+ 
+
+8. basic properties can be seached as well - let's look for "未" :
+
+P1.find_in_set_properties("未","FN",PP4)
+
+
+found in element: h2
+
+in property: basic
+
+value: 未濟
+
+    FNh2           
+  64           
+      ䷿           
+      未濟           
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -- --   
+      未濟           
+                 
+      Weiji           
+      Unfinished           
+      Вэй-цзи           
+      Незавершенность           
+ color :  white  
+ 
+or for number "64"：
+
+P1.find_in_set_properties("64","FN",PP4)
+
+found in element: h2
+
+in property: basic
+
+value: 64
+
+    FNh2           
+  64           
+      ䷿           
+      未濟           
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -- --   
+      未濟           
+                 
+      Weiji           
+      Unfinished           
+      Вэй-цзи           
+      Незавершенность           
+ color :  white  
+ 

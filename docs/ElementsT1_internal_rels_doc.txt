@@ -1,0 +1,106 @@
+#
+# "CHANGES" library  - - Documentation - Cheking internal relationships
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+
+( console mode )
+
+1. first load library and default sets:
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+ 
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+
+2. create element group:
+
+PP4 = Elements()
+
+3. add a hexagram:
+
+ PP4.add_byN_from_set("h1",63,Hextable)
+ 
+one element added
+
+and print it :
+
+ print PP4
+ 
+    h1           
+  63           
+      ䷾           
+      既濟           
+    -- --   
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -----   
+      既濟           
+                 
+      Jiji           
+      Finished           
+      Цзи-цзи           
+      Завершенность           
+
+total elements:1
+
+4. chek internal relationships:
+
+PP4.check_int_rels("h1")
+
+you get :
+
+Checking : Odd Yao - Yin, Even Yao - Yang 
+
+Top Yao - Yin - True  -- correct position
+
+5th Yao - Yang - True -- correct position 
+
+4th Yao - Yin - True -- correct position 
+
+3d Yao - Yang - True -- correct position
+
+2nd Yao - Yin - True -- correct position
+
+1st Yao - Yang - True -- correct position
+
+
+
+Checking : Ying yao Correlations : 1 - 4, 2 - 5, 3 - 6 
+
+3 - 6 : Yang -  Yin -- Zheng Ying
+
+2 - 5 : Yin - Yang -- Zheng Ying 
+
+1 - 4 : Yang -  Yin -- Zheng Ying
+
+
+
+Checking : Juxtapositions - yao correlations : 1 - 2, 2 - 3, 3 - 4, 4 - 5, 5 - 6 
+
+5 - 6 : Yang -  Yin -- Zheng bi
+
+4 - 5 : Yin - Yang -- Zheng bi
+
+3 - 4 : Yang -  Yin -- Zheng bi
+
+2 - 3 : Yin - Yang -- Zheng bi
+
+1 - 2 : Yang -  Yin -- Zheng bi
+
+
+
+
+

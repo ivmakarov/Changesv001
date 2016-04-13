@@ -1,0 +1,104 @@
+#
+# "CHANGES" library  - - Documentation - Hsien Tien Devination
+#		
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+
+( console mode )
+
+1. first load library and default sets:
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+ 
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+
+2. form elements group
+
+PP4 = Elements()
+
+3. use Hsien Tien devination method, for example for 
+
+19th april 1982 10 a.m. :
+
+PP4.HsienTien('h1',1982,4,19,10,bagua,Hextable)
+
+where 
+
+'h1' - resulting hexagram name
+1982 - year in format YYYY
+4 month april in format (1-12) 
+19 day in format (1-31)
+10 hour in format (1-24)
+bagua - bagua set
+Hextable - hexagram set
+
+
+you get :
+
+ Year : 1982, Month : 4, Day : 19, Hour : 10
+
+
+result : 
+
+    h1           
+  13           
+      ䷌           
+      同人           
+    -----     
+    ----- x   
+    -----     
+    -----     
+    -- --     
+    -----     
+      同人           
+                 
+      Tongren           
+      Fellowship           
+      Тун-Жен           
+      компаньоны           
+      Warning : returning spirit           
+
+4. change floating yao :
+
+PP4.change_float_yaos('h1','Ch1')
+
+5. Add info from hexagram set:
+
+PP4.find_in_set('Ch1','Ch1',Hextable)
+
+6. print it:
+
+print PP4('Ch1')
+    Ch1           
+  30           
+      ䷝           
+      離           
+    -----     
+    -- --     
+    -----     
+    -----     
+    -- --     
+    -----     
+      離           
+                 
+      Li           
+      Fire           
+      Ли           
+      огонь           
+
+pp 4-6 in one function:
+
+PP4.change_float_print('h1','Ch1',Hextable)
+

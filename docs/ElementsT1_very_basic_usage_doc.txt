@@ -1,0 +1,267 @@
+#
+# "CHANGES" library  - - Documentation - very basic usage example
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+1. Use ipython in Linux, Macos X, in windows pythonwin
+
+  tipp for win: chcp 65001, and set up the cmd window to use Lucida Console font 
+
+
+( console mode )
+
+1. first load library and default sets:
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+ 
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+
+3. Define the elements group:
+
+  Mybagua = Elements()
+  
+  to get info about any function applyable to this group :
+
+help(Mybagua.function_name)
+
+press q to return to command line
+
+  
+4. Add the element to the group:
+
+  Mybagua.add("Qian",1,1,1)
+  
+5. Add chinese name to the element:
+
+  Mybagua.add_ElChname("Qian","乾")
+
+6. Add unicode symbol for the element:
+
+  Mybagua.add_ElUcode("Qian","☰")
+  
+  or several simle notations:
+  
+  Mybagua.add_Elinfo("Qian",0, "☰","乾","天","Цянь","Qian","Heaven","небо")
+  
+  or number of element:
+  
+  Mybagua.add_ElHNumber("Qian",1)
+
+
+7. Add property to the Element
+
+  Mybagua.add_ElProperty("Qian","Season","early October mid-December")
+  
+  you can edit it, enter new PrValue as third argument  :
+  
+  Mybagua.edit_ElProperty("Qian", "Season", "early October and mid December")
+
+
+8. Display the element
+
+  print Mybagua("Qian")
+  
+  you get :
+  
+   Qian           
+      ☰           
+      乾           
+    -----   
+    -----   
+    -----   
+      乾           
+      天           
+      Qian           
+      Heaven           
+      Цянь           
+      небо           
+
+   
+ Season :  early October mid-December  
+
+9. Get the creation time of the element:
+
+  Mybagua.get_ElCrdatetime("Qian")
+
+  you get:
+  
+  '2015-08-31 20:03:40.637380'
+  
+10. Save your group of the elements to the file:
+
+  save_to_file(Mybagua,"dumpfile2")
+
+11. Exit ipython
+
+  quit()
+  
+12. Ente ipython again
+
+  ipython
+  
+13. load the library
+
+  from ElementsT1 import *
+  
+14. load your group of the elements from file
+
+  Mybagua = load_from_file("dumpfile2")
+  
+15. Work with your element set,add another element
+
+  Mybagua.add("Li",1,0,1)
+
+
+16. print all elements
+
+  print Mybagua
+
+17. In case of serious error delete element
+
+  Mybagua.delete("Li")
+
+18. Create Relationships pool:
+  
+  R = RELationships()
+  
+19. Add Relarionship "WenWang", 1-directed , 0 - not:
+
+  R.add("WenWang",1)
+  
+20. One can assign numbers to elements and add them one by one :
+
+R.add_NEl('WenWang',Mybagua,1,'Zhen')
+R.add_NEl('WenWang',Mybagua,2,'Xun')
+R.add_NEl('WenWang',Mybagua,3,'Li')
+R.add_NEl('WenWang',Mybagua,4,'Kun')
+R.add_NEl('WenWang',Mybagua,5,'Dui')
+R.add_NEl('WenWang',Mybagua,6,'Qian')
+R.add_NEl('WenWang',Mybagua,7,'Kan')
+R.add_NEl('WenWang',Mybagua,8,'Gen')
+
+21. add directed circular link :
+
+ R.circ_1toNLink('WenWang',1,8,1,'generates','lime')
+ 
+
+20. Check elements:
+
+  R.Relatioships["WenWang"].elements
+  
+  you get:
+  
+  {'Dui': <ElementsT1.Element at 0x4d292d0>,
+ 'Gen': <ElementsT1.Element at 0x4d29510>,
+ 'Kan': <ElementsT1.Element at 0x4d29350>,
+ 'Kun': <ElementsT1.Element at 0x4d293d0>,
+ 'Li': <ElementsT1.Element at 0x4d29490>,
+ 'Qian': <ElementsT1.Element at 0x4d29290>,
+ 'Xun': <ElementsT1.Element at 0x4d29410>,
+ 'Zhen': <ElementsT1.Element at 0x4d29390>}
+
+ 
+
+ 
+22. Check links:
+
+  R.Relatioships["WenWang"].links
+  
+  
+  you get :
+  
+  {'Dui Qian': <ElementsT1.Link at 0x4d29750>,
+ 'Gen Zhen': <ElementsT1.Link at 0x4d29850>,
+ 'Kan Gen': <ElementsT1.Link at 0x4d29810>,
+ 'Kun Dui': <ElementsT1.Link at 0x4d29790>,
+ 'Li Kun': <ElementsT1.Link at 0x4d29610>,
+ 'Qian Kan': <ElementsT1.Link at 0x4d297d0>,
+ 'Xun Li': <ElementsT1.Link at 0x4d29990>,
+ 'Zhen Xun': <ElementsT1.Link at 0x4d295d0>}
+ 
+23. Plot it :
+
+R.plot_circular('WenWang',np.pi,-1,8,'generates','lime')
+
+where 
+
+'WenWang' - relationship name
+np.pi - starting point
+-1 - direction clockwise
+8 - number of elements
+'generates' - type of the link
+'lime' - color of the link
+
+24. save it :
+
+save_to_file(R,'WWrel1')
+
+25. and load :
+
+R = load_from_file('WWrel1')
+
+
+
+
+
+
+outdated, not use !!!
+or create circular relationship in one command - order elements how they should be conected in cycle 1->2->3..and last ine is connected to first. 
+
+R = RELationships()
+
+ R.add("WenWang",1)
+
+ R.circ_Rel("WenWang",Mybagua, 1,"Zhen","Xun","Li","Kun","Dui","Qian","Kan","Gen")
+ 
+ 24. Add label to the elements in Relationship - second argument is the name of the attribut in Element,
+ in the group ( Mybagua ) for which we define the Relationship - in this case Ucode - unicode sybdol of the trigramm.
+ 
+  R.add_labelsEl("WenWang", "Ucode")
+  
+ 25. check labels:
+ 
+  R.Relatioships["WenWang"].labels
+
+  you get :
+  
+  {'Dui': '\xe2\x98\xb1',
+ 'Gen': '\xe2\x98\xb6',
+ 'Kan': '\xe2\x98\xb5',
+ 'Kun': '\xe2\x98\xb7',
+ 'Li': '\xe2\x98\xb2',
+ 'Qian': '\xe2\x98\xb0',
+ 'Xun': '\xe2\x98\xb4',
+ 'Zhen': '\xe2\x98\xb3'}
+
+26. Draw the relationship in circular graph:
+
+  R.draw_Rel("WenWang","circular")
+
+
+ 
+ 
+ 
+
+ 
+
+
+  
+
+  
+
+  
+  
+
+
+  

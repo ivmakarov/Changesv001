@@ -1,0 +1,138 @@
+#
+# "CHANGES" library  - - Documentation - General Information
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, Oleksandr Golovchnsky 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+"CHANGES" library is a software designed to operate with terms, concepts and ideas of chinese philosophy and 
+first of all book of changes -"I Ching'.
+The library allows you to introduce and operate with trigrams and hexagrames, Wu Xing, stems and branches, use traditional chinese
+solar-lunar calendar, calculations of acupuncture points and channels for treatment...etc.
+
+The "CHANGES" library operates in Linux, Mac Os X and Windows systems, for installation instruction read ElementsT1_installation_doc.txt.
+
+The "CHANGES" library  is distributed under MIT license, for more information read License.txt.
+
+This library is intended to be used by :
+
+1) Acupuncturists - traditional chinese methods are implemented in the library, including calculation of 
+acupuncture points for pain treatment and pulse counting and analysis. These functions should be used by 
+sertified acupuncturists only.
+
+2) Ichinists - scientists and philosophers who use I Ching in thier work. For them a lot of operations and 
+analysis procedures are implemented.
+
+3) Practitioners of I Ching divination - for them several traditional chinese divination methods are
+implemented - Hsien Tien, Hu Tien, Dice and Coins divination.
+
+For those who wants to go deeper into I CHing I recomend to start with book 
+"The Tao of I Ching Way to Divination" Jou, Tsung Hwa, 1984.
+For medical doctors, who wants to use I Ching - the book
+"The medical I Ching, oracle of the healer within", Miki Shima, 1992.
+I recommend to purchase these books.
+
+The basic tems in "CHANGES" library are elements. They can be hexagrams, trigrams or other.
+These elements (hexagrams/trigrams/other) are organized into sets.
+They are subject to following Names convention:
+Each set name should be unique.
+Set names should be only english.
+Each element in the set has unique name in english only. This key name identifies the element and can not be changed.
+In Set Editor (see below) this name defines "current element" it is entered/copied into "Element name:" line - with wich other operetions are performed.
+The properties can be defined for each element in the set.
+Property is a pair "Property name":"Property value".
+Property names should be only english too.
+The values of properties might be english, chinese or cyrilic, as well as multilanguage 'name/note' properties.
+Shot names of channels and acupuncture points in english ( english notation ):
+'GB','BL','LI','ST','TB','SI','KID','LIV','LU','Sp','Ht','HG',
+extraordinary - 'CV','GV','TV','BV','InnLV','YangLV','InnHV','YangHV',
+for no channel points -'NoCh'.
+point are numbered like 'BL-40'.
+The name of the channel can be only from the list above, no arbitrary names.
+The name of the point can be only english in form 'BL-1','BL-2',etc.
+Shot names of channels and acupuncture points in french ( french notation ):
+'VB','V','GI','E','TR','IG','R', 'F','P','Rp','C','MC',extraordinary - 'VC','VG',
+point are numbered like 'V-40' only.
+Strict names for channels and points are nessesary because each channel has 2 lists with points in
+english and french notation - the points are added and deleted from these lists each time new point is
+added or deleted from the system.
+The library supports both english and french notation, however function names are different - 
+a function which uses french notation hahe 'fr' letter added to the name. 
+The results of calculation of acupuncture point usually are given in form TR 5  (TB 5) -
+french notation first, followed by english notaion in brackets.
+
+The library can be used and is fully functional in console mode ( Ipython in Linux and Mac Os X and Pythonwin in windows )
+Usage advises in console mode  are given in  ElementsT1_getting_started_guide.txt.
+
+As well the library have graphical modules. ( for free download is avalable only console version at the moment )
+
+Now the library consists of 11 graphical units or modules :
+
+1) "Pain Treatment calculation" - this module is intended for acupuncturists and calculates acupuncture 
+points for pain treatment.
+
+2) "Pulse calculation" - this module is intended for acupuncturists and is used for pulse calculation and analysis.
+
+3) "Hexagram table" - this is reference module for hexagrams/trigrams.
+
+4) "Stems branches" - this module calculates stems and brаnches ( Eight characters ) for current moment of time.
+It provides as well the 12 schichen ( chinese hours ) table.
+
+5) "Calendar" - provides calendar and information about the date in chinese traditional 
+solar-lunar calendar includins solar terms.
+
+6) "Hsien Tien" provides a traditional chinese devination method based on Y Ching.
+
+7) "Hu Tien" provides a traditional chinese devination method based on Y Ching.
+
+8) "Dice" - a traditional chinese devination method based on Y Ching. 
+Provides Dice simulation as well.
+
+9) "Coins' - a traditional chinese devination method based on Y Ching.
+Provides Coins simulation as well.
+
+10) "Set Editor" - provides a functionality to create and edit your trigram/hexagram/any elements sets.
+It allows you to create new elements or to work with existing hexagrams from loaded set, investigate internal relationships, 
+define and change floatinge yaos, get nuclear hexagrams, edit elements changing and updating thier properties.
+
+11) 'Channels Points Editor' - provides a functionality to create and edit channels and points sets.
+
+
+for futher information on modules refer to corresponding documentation files.
+
+The Library is located in the directory Changesv001/ and documentation directory Changesv001/docs/.
+In Linux and Mac Os X it is usually located in the user home directory and in windows in the root directory of C:\\ disc.
+
+To start the library double click on icon in Windows, or run it in the terminal "python ChLib.py &" in library directory
+in Linux or Macos X.
+The Library Selector window will open, then start a module.
+
+The Library can be used in the consol mode via Ipython in Linux and Macos X and Pythonwin in windows.
+
+
+( console mode )
+
+1. first load library and default sets (Linux and Macos X):
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+ 
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+ 
+ then enter commands, one by one.
+ 
+ Documentation files describing console mode stars with 
+ 
+ ( console mode )
+ 
+ line.
+
+

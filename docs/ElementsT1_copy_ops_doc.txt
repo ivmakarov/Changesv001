@@ -1,0 +1,68 @@
+#
+# "CHANGES" library  - - Documentation - Copy operations
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+( console mode )
+
+there are 2 classes of copy operations in Changes library - they work differetly with 
+floating yaos - 1st class ( copy_El and basic_copy and function that uses them like
+find_in_set ) - they do not copy floating yao information - this is useful if you need to 
+copy basic information from the hexagram set - using find_in_set function.
+2nd class ( copy_El_float and copy_by_name ) - they copy element including
+floating yao information. this is useful if you have obtained a hexagram with floating 
+yaos and you want to make a full copy of it for futher processing.
+please note if the operation takes the element El as second parametr it shoul not be confused
+with the name of the element and adressed like Group.elements["Name"] or
+by iterator inside the group.
+
+description of copy functions:
+
+1st class
+
+1. copy_El( Name, El)
+
+    element El is copied and added to current group under the Name
+        ATTN: floating yaos are not copied!
+        
+2. basic_copy( Name, El)
+
+      element El is copied ( not floating yaos !)  
+      and basic properties too
+      basic properties are the field of the element:
+      El.hex , El.Ucode, El.ChName, El.ChNote, El.RName, El.EngName, El.Note, El.RNote, El.HNumber
+ 
+3. copy_properties(Name,El)
+
+        element El properties are copied to Name element
+        
+ not a copy operation! but useful for addind aditional information
+ 
+    find_in_set( Name, FoundName, SetName):
+        finds elenemt with the same yaos like Name in Setname
+        found element is added to the group under name FoundName
+        if FoundName = Name basic info from set is added,
+        ATTN: floating yao info is conserved like in original hexagram,
+        not copied from the set
+        
+2nd class
+
+4. copy_El_float( Name, El):
+        Element is copied including floating Yaos and basic properties
+        basic properties are the field of the element:
+        El.hex , El.Ucode, El.ChName, El.ChNote, El.RName, El.EngName, El.Note, El.RNote, El.HNumber
+
+5. copy_full_El(Name,El):
+
+        copies full El - yaos,float yaos, basic info and properties
+
+6.  copy_by_name(ElName,Name):
+	this operation works only inside working group and takeas as arguments only
+	element names, not the El itself like in previous operations.
+        element Elname is copied inside the group and assigned name Name
+
+        

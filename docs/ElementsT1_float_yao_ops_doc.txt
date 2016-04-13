@@ -1,0 +1,39 @@
+#
+# "CHANGES" library  - - Documentation - floating yao operations
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+( console mode )
+
+Here we describe floating yao operations and change yao functions.
+
+1. add_float_yao( Name, flo, flo2=None, flo3=None, flo4=None,flo5=None,flo6=None)
+    
+    adds floating yao in format int number 1 to 6.
+    up to 6 floating yaos can be added.
+    
+2. del_float_yao( Name, f=None)
+    
+    all floating yaos are deleted.
+    
+3. change_yao(Name,CGName,Yao)
+
+  invertes yao and adds result under CGName 
+  
+4. change_yaos( Name,CGName,Yao, Yao2 = None,Yao3=None,Yao4=None,Yao5=None,Yao6=None)
+
+  invertes up to 6 yaos and adds result under CGName 
+  
+  
+5. change_float_yaos( Name, CGName)
+
+  changes floating yaos in Name and saves under CGName
+  
+6. changeYao_set( Name)
+
+  changes consequently each of 6 yaos: forms a set of 6 hexagram - 
+  each yao of Name is changed.  names :  Name + N yao changed

@@ -1,0 +1,311 @@
+#
+# "CHANGES" library  - - Documentation - Basic Sets
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+ In the "CHANGES" library sets are a sets of elements. They are located in the SetsDirectory,
+defined in the file ElementsT1.py. In this file also the names of the default sets are defined, they are loaded each time 
+when library is started. In console mode they are loaded by the script load_def_sets.py  - it is executed 
+always at the begining of the work by the first command you enter - %run load_def_sets.py in Ipython or by 
+pressing run button in pythonwin.
+
+In the console mode all elements in the set can be displayed by the command
+
+print setname
+
+single element in the set can be displayed by 
+
+print setname('elementname')
+
+
+
+The default sets are :
+
+
+1. taiji - consists of only one element - taiji
+
+command 
+
+print taiji
+
+gives:
+
+    Taiji           
+      太極           
+      太極    
+      
+2. liangyi - consists of two elements - Yin and Yang :
+
+print liangyi
+    Yang           
+      陽           
+    -----      
+      陽           
+
+    Yin           
+      陰           
+    -- --      
+      陰      
+
+
+        
+3. sixiang - consists of four elements :
+
+print sixiang
+    Shaoyang           
+      少陽           
+    -----      
+    -- --      
+      少陽           
+
+    Shaoyin           
+      少陰           
+    -- --      
+    -----      
+      少陰           
+
+    Taiyang           
+      太陽           
+    -----      
+    -----      
+      太陽           
+
+    Taiyin           
+      太陰           
+    -- --      
+    -- --      
+      太陰           
+
+
+4. bagua - consists of 8 gua :
+
+print bagua
+    Qian           
+  1           
+      ☰           
+      乾           
+    -----      
+    -----      
+    -----      
+      乾           
+      天           
+      Qian           
+      Heaven           
+      Цянь           
+      небо           
+ Channels WW :  foot VB V (GB BL)  
+  Fu Hsi direction :  South  
+  Wen Wang direction :  Nordwest  
+  animal :  horse  
+  direction :  right-back, 4h, 5h  
+  virtue :  tough or strong  
+  wuxing :  metal  
+  zangfu :  Large Intestine  
+
+.....
+
+
+5.  Hextable  - consists of 64 hexagrams, print first one 
+
+print Hextable('Qian')
+    Qian           
+  1           
+      ䷀           
+      乾           
+    -----   Ren Xu 壬戌   
+    -----   Ren Shen 壬申   
+    -----   Ren Wu 壬午   
+    -----   Jia Chen 甲辰   
+    -----   Jia Yin 甲寅   
+    -----   Jia Zi 甲子   
+      乾           
+      天           
+      Qian           
+      Heaven           
+      Цянь           
+      небеса           
+ JFpalace :  palace Qian metal Yang base  
+  JFseason :  autumn: 7.8-20.10  
+
+or display the hexagram table by the command :
+
+P1.show_hextable(bagua,Hextable)
+
+    upper->     ☰ Qian     ☳ Zhen     ☵ Kan     ☶ Gen     ☷ Kun     ☴ Xun     ☲ Li     ☱ Dui
+    lower
+    ☰ Qian      1 ䷀       34 ䷡      5 ䷄       26 ䷙      11 ䷊      9 ䷈       14 ䷍      43 ䷪
+
+    ☳ Zhen      25 ䷘      51 ䷲      3 ䷂       27 ䷚      24 ䷗      42 ䷩      21 ䷔      17 ䷐
+
+    ☵ Kan       6 ䷅       40 ䷧      29 ䷜      4 ䷃       7 ䷆       59 ䷺      64 ䷿      47 ䷮
+
+    ☶ Gen       33 ䷠      62 ䷽      39 ䷦      52 ䷳      15 ䷎      53 ䷴      56 ䷷      31 ䷞
+
+    ☷ Kun       12 ䷋      16 ䷏      8 ䷇       23 ䷖      2 ䷁       20 ䷓      35 ䷢      45 ䷬
+
+    ☴ Xun       44 ䷫      32 ䷟      48 ䷯      18 ䷑      46 ䷭      57 ䷸      50 ䷱      28 ䷛
+
+    ☲ Li        13 ䷌      55 ䷶      63 ䷾      22 ䷕      36 ䷣      37 ䷤      30 ䷝      49 ䷰
+
+    ☱ Dui       10 ䷉      54 ䷵      60 ䷻      41 ䷨      19 ䷒      61 ䷼      38 ䷥      58 ䷹
+
+and print hexagram by number :
+
+P1.print_by_Number(1,Hextable)
+    Qian           
+  1           
+      ䷀           
+      乾           
+    -----   Ren Xu 壬戌   
+    -----   Ren Shen 壬申   
+    -----   Ren Wu 壬午   
+    -----   Jia Chen 甲辰   
+    -----   Jia Yin 甲寅   
+    -----   Jia Zi 甲子   
+      乾           
+      天           
+      Qian           
+      Heaven           
+      Цянь           
+      небеса           
+ JFpalace :  palace Qian metal Yang base  
+  JFseason :  autumn: 7.8-20.10  
+
+6. wuxing  - consists of 5 movements :
+
+print wuxing
+    earth           
+      土           
+      土           
+ branches :  Chou Chen Wei Xu  
+  cardinal direction :  Center  
+  climate :  damp  
+  color :  yellow, orange  
+  gua :  Kun Gen  
+  heavenly creature :  Yellow Dragon  
+  planet :  Saturn  
+  season :  out-season: 18.4-5.5; 20.7-6.8; 21.10-7.11; 17.1-3.2  
+  shape :  square  
+  stems :  Wu Ji  
+  virtue :  qian  
+  zangfuEO :  St SI HG LIV  
+  zangfuHO :  TB HG St Sp  
+ 
+    fire           
+      火           
+      火           
+ branches :  Si Wu  
+  cardinal direction :  South  
+  climate :  hot  
+  color :  red, purple  
+  gua :  Li  
+  heavenly creature :  Vermilion Bird  
+  planet :  Mars  
+  season :  summer: 6.5-19.7  
+  shape :  triangular  
+  stems :  Bing Ding  
+  virtue :  heng  
+  zangfuEO :  Sp Ht  
+  zangfuHO :  SI Ht  
+ 
+ ......
+
+
+7. stems - consists of 10 selestial stems :
+
+print stems
+    Jia           
+  1           
+      甲           
+      甲           
+ gmov_organ :  Galbladder in Earth  
+  wuxing :  wood  
+  yinyang :  yang  
+ 
+    Yi           
+  2           
+      乙           
+      乙           
+ gmov_organ :  Liver in Metal  
+  wuxing :  wood  
+  yinyang :  yin  
+
+......
+
+8. branches - consists of 12 earthly branches :
+
+print branches
+    Zi           
+  1           
+      子           
+      子           
+ organ :  Galbladder  
+  phase :  wood yang  
+  wuxing :  water  
+  yinyang :  yang  
+ 
+    Chou           
+  2           
+      丑           
+      丑           
+ organ :  Liver  
+  phase :  wood yin  
+  wuxing :  earth  
+  yinyang :  yin  
+ 
+.......
+
+
+9.  channels - consists of 20 channels and one set for off-channel points:
+
+print channels
+    BL           
+      足太阳膀胱经           
+      足太阳膀胱经           
+      EN: BL           
+      FR: V           
+      Inn/Yang: Yang           
+      Hand/Foot: Foot (足)           
+      Type: standart, (taiyang, 太阳)           
+      Full Name: Taiyang Bladder Channel of Foot (足太阳膀胱经)           
+      Zang Fu: Urinary bladder (膀胱)           
+      Time: 申 3 p.m. to 5 p.m.
+           
+
+    BV           
+      帶脈           
+      帶脈           
+      EN: BV           
+      Type: extraordinary           
+      Full Name: Girdle Vessel (Dai Mai) - 帶脈           
+
+    CV           
+      任脈           
+      任脈           
+      EN: CV           
+      FR: VC           
+      Type: extraordinary           
+      Full Name: Conception Vessel (Ren Mai) - 任脈    
+      
+      
+.....
+
+
+
+10. points - consists of 362 and counting acupuncture points :
+
+print points('LI-17')
+
+    LI-17           
+      天鼎           
+      天鼎           
+      pinyin :Tian Ding           
+      EN: LI-17           
+      FR: GI-17          
+
+      
+The "CHANGES" library alows you to add properties to the existing set elements and create your own sets.

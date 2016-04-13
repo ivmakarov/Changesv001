@@ -1,0 +1,67 @@
+#
+# "CHANGES" library  - - Documentation - getting started guide
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+1. Install and configure the "CHANGES" library for your system ( Linux, Mac Os X or Windows ) following 
+instructions in ( /docs subdirectory ) :
+
+ElementsT1_installation_doc.txt
+
+2. Read documentation to get general idea about the "CHANGES" library:
+
+ElementsT1_general_doc.txt
+
+3. Read documentation about default sets and very basic usage and repeat commands in your console 
+application ( Ipython or pythonwin ) in files :
+
+ElementsT1_default_sets_usage_doc.txt
+ElementsT1_very_basic_usage_doc.txt
+
+4.Operation with hexagrams :
+
+ElementsT1_hexagram_set_doc.txt
+
+5. Calculation of stems and branches :
+
+ElementsT1_stemsbranches_doc.txt
+
+6. Devination :
+
+ElementsT1_devination_doc.txt
+ElementsT1_HsienTien_doc.txt
+ElementsT1_HuTien_doc.txt
+
+7. More operations with hexagrams and other elements :
+
+ElementsT1_internal_rels_doc.txt
+ElementsT1_float_yao_ops_doc.txt
+ElementsT1_comparison_ops_doc.txt
+ElementsT1_copy_ops_doc.txt
+ElementsT1_properties_search_doc.txt
+ElementsT1_Gui_Hun_example_doc.txt
+ElementsT1_Relationships_doc.txt
+
+8. Use ? command to find more about functions :
+
+?P1.print_by_Number
+
+Type:       instancemethod
+File:       /home/username/workspaceCH1/Changesv001/ElementsT1.py
+Definition: P1.print_by_Number(self, HN, Hset)
+Docstring:  prints hexagram by number
+
+
+
+
+
+
+
+
+
+
+ 

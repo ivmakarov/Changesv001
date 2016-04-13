@@ -1,0 +1,665 @@
+#
+# "CHANGES" library  - - Documentation - Celestial Stems Eathly Branches unit
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+prerequisite:
+first enter correct coordinates in format grad:min:sec and time difference 
+etween your local time and UTC at the beginning of the 
+file ChangesT1_StemsBranches.py :
+
+LAT = '50:27'   # '36:02'
+LON = '30:31'   # '103:48'   
+DUTC = 2        # 8
+PLACE = 'Kiev'  # 'LANZHOU'
+
+and set your computer clock to local time exactly!
+ATTN:
+this is nessesary for correct function of medical unit too !
+
+algorithm limitations:
+calculations can be done for any moment of time between 1901 and 2049 gregorian years,
+for any place on Earth where sunrise/sunset happens every day - it mean any place exept polar regions.
+Due to uncertainty inherent in the algorithms used events and time intervals may differ about 3-4 minutes.
+
+1. load unit:
+
+from ChangesT1_StemsBranches import *
+
+2. define stems&branches :
+
+s= stemsbranches()
+
+3. define time:
+
+dt = datetime.datetime.now()
+
+4. define location and set hours according to solar time :
+
+for the same predifined in the beggining of the file location this can be done with one command:
+
+s.init_12shichen(dt)
+
+or for sunrise/sunset correction:
+
+s.init_solar12shichen(dt) 
+
+[optional :
+
+or for different location same time use :
+
+s.init_coords('50:25','30:30',2,'Kiev')
+
+s.init_hours(dt)
+
+s.corr_hours_soltime(dt)
+
+or for sunrise/sunset correction:
+
+s.init_coords('36:02','103:48',8,'Lanzhou')
+
+s.solar_hours(dt,1)
+
+for different time and different location see p.10]
+
+5. check location :
+
+s.print_coords()
+
+you get :
+
+Latitude : 50:25
+Longitude : 30:30
+Timezone (diff to UTC) : 2
+Location : Kiev
+
+it is better for different locations to use different stems&branches objects.
+
+6. print stems and branches for given time and location :
+
+s.print_stemsbranches(dt)
+
+you get:
+
+Year stem and branch :
+Yi-Wei
+乙未
+Month stem and branch :
+Bing-Xu
+丙戌
+Day stem and branch :
+Jia-Zi
+甲子
+Hour stem and branch :
+Geng-Wu
+庚午
+
+
+
+this can be done in separate calls:
+
+s.year_dt_stembranch(dt)
+
+s.month_dt_stembranch(dt)
+
+s.day_dt_stembranch(dt)
+
+s.hour_dt_stembranch(dt)
+
+7. print hours :
+
+s.print_12shichen(dt)
+
+you get:
+
+Zi hour = from 22:44:06 to 00:44:06
+Chou hour = from 00:44:06 to 02:44:06
+Yin hour = from 02:44:06 to 04:44:06
+Mao hour = from 04:44:06 to 06:44:06
+Chen hour = from 06:44:06 to 08:44:06
+Si hour = from 08:44:06 to 10:44:06
+Wu hour = from 10:44:06 to 12:44:06
+Wei hour = from 12:44:06 to 14:44:06
+Shen hour = from 14:44:06 to 16:44:06
+You hour = from 16:44:06 to 18:44:06
+Xu hour = from 18:44:06 to 20:44:06
+Hai hour = from 20:44:06 to 22:44:06
+Next Day
+Zi hour = from 22:44:06 to 00:44:06
+
+Zi hour mentioned twice to cower all 24h day.
+
+the same with additional duration of each hour:
+
+s.print_12shichen(dt,1)
+
+Zi hour = from 23 h 40 min to 01 h 56 min
+Duration : 2 h 15 min
+Chou hour = from 01 h 56 min to 04 h 11 min
+Duration : 2 h 15 min
+Yin hour = from 04 h 11 min to 06 h 27 min
+Duration : 2 h 15 min
+Mao hour = from 06 h 27 min to 08 h 27 min
+Duration : 1 h 59 min
+Chen hour = from 08 h 27 min to 10 h 11 min
+Duration : 1 h 44 min
+Si hour = from 10 h 11 min to 11 h 56 min
+Duration : 1 h 44 min
+Wu hour = from 11 h 56 min to 13 h 40 min
+Duration : 1 h 44 min
+Wei hour = from 13 h 40 min to 15 h 24 min
+Duration : 1 h 44 min
+Shen hour = from 15 h 24 min to 17 h 09 min
+Duration : 1 h 44 min
+You hour = from 17 h 09 min to 19 h 09 min
+Duration : 2 h 00 min
+Xu hour = from 19 h 09 min to 21 h 25 min
+Duration : 2 h 15 min
+Hai hour = from 21 h 25 min to 23 h 40 min
+Duration : 2 h 15 min
+Next Day
+Zi hour = from 23 h 40 min to 01 h 56 min
+Duration : 2 h 15 min
+Chou hour = from 01 h 56 min to 04 h 12 min
+
+to get subhours:
+
+s.print_12shichen(dt,2)
+
+Zi hour = from 22 h 27 min to 00 h 58 min
+Channel = VB (GB)
+ Subhours :
+ C (Ht) = from 22 h 27 min to 23 h 05 min
+ IG (SI) = from 23 h 05 min to 23 h 43 min
+ V (BL) = from 23 h 43 min to 00 h 21 min
+ R (KID) = from 00 h 21 min to 00 h 58 min
+
+
+Chou hour = from 00 h 58 min to 03 h 30 min
+Channel = F (LIV)
+ Subhours :
+ MC (HG) = from 00 h 58 min to 01 h 36 min
+ TR (TB) = from 01 h 36 min to 02 h 14 min
+ VB (GB) = from 02 h 14 min to 02 h 52 min
+ F (LIV) = from 02 h 52 min to 03 h 30 min
+
+
+Yin hour = from 03 h 30 min to 06 h 01 min
+Channel = P (LU)
+ Subhours :
+ P (LU) = from 03 h 30 min to 04 h 08 min
+ GI (LI) = from 04 h 08 min to 04 h 45 min
+ E (ST) = from 04 h 45 min to 05 h 23 min
+ Rp (Sp) = from 05 h 23 min to 06 h 01 min
+
+
+Mao hour = from 06 h 01 min to 08 h 01 min
+Channel = GI (LI)
+ Subhours :
+ C (Ht) = from 06 h 01 min to 06 h 31 min
+ IG (SI) = from 06 h 31 min to 07 h 01 min
+ V (BL) = from 07 h 01 min to 07 h 31 min
+ R (KID) = from 07 h 31 min to 08 h 01 min
+
+
+Chen hour = from 08 h 01 min to 09 h 29 min
+Channel = E (ST)
+ Subhours :
+ MC (HG) = from 08 h 01 min to 08 h 23 min
+ TR (TB) = from 08 h 23 min to 08 h 45 min
+ VB (GB) = from 08 h 45 min to 09 h 07 min
+ F (LIV) = from 09 h 07 min to 09 h 29 min
+
+
+Si hour = from 09 h 29 min to 10 h 58 min
+Channel = Rp (Sp)
+ Subhours :
+ P (LU) = from 09 h 29 min to 09 h 52 min
+ GI (LI) = from 09 h 52 min to 10 h 14 min
+ E (ST) = from 10 h 14 min to 10 h 36 min
+ Rp (Sp) = from 10 h 36 min to 10 h 58 min
+
+
+Wu hour = from 10 h 58 min to 12 h 26 min
+Channel = C (Ht)
+ Subhours :
+ C (Ht) = from 10 h 58 min to 11 h 20 min
+ IG (SI) = from 11 h 20 min to 11 h 42 min
+ V (BL) = from 11 h 42 min to 12 h 04 min
+ R (KID) = from 12 h 04 min to 12 h 26 min
+
+
+Wei hour = from 12 h 26 min to 13 h 55 min
+Channel = IG (SI)
+ Subhours :
+ MC (HG) = from 12 h 26 min to 12 h 49 min
+ TR (TB) = from 12 h 49 min to 13 h 11 min
+ VB (GB) = from 13 h 11 min to 13 h 33 min
+ F (LIV) = from 13 h 33 min to 13 h 55 min
+
+
+Shen hour = from 13 h 55 min to 15 h 23 min
+Channel = V (BL)
+ Subhours :
+ P (LU) = from 13 h 55 min to 14 h 17 min
+ GI (LI) = from 14 h 17 min to 14 h 39 min
+ E (ST) = from 14 h 39 min to 15 h 01 min
+ Rp (Sp) = from 15 h 01 min to 15 h 23 min
+
+
+You hour = from 15 h 23 min to 17 h 23 min
+Channel = R (KID)
+ Subhours :
+ C (Ht) = from 15 h 23 min to 15 h 53 min
+ IG (SI) = from 15 h 53 min to 16 h 23 min
+ V (BL) = from 16 h 23 min to 16 h 53 min
+ R (KID) = from 16 h 53 min to 17 h 23 min
+
+
+Xu hour = from 17 h 23 min to 19 h 55 min
+Channel = MC (HG)
+ Subhours :
+ MC (HG) = from 17 h 23 min to 18 h 01 min
+ TR (TB) = from 18 h 01 min to 18 h 39 min
+ VB (GB) = from 18 h 39 min to 19 h 17 min
+ F (LIV) = from 19 h 17 min to 19 h 55 min
+
+
+Hai hour = from 19 h 55 min to 22 h 27 min
+Channel = TR (TB)
+ Subhours :
+ P (LU) = from 19 h 55 min to 20 h 33 min
+ GI (LI) = from 20 h 33 min to 21 h 11 min
+ E (ST) = from 21 h 11 min to 21 h 49 min
+ Rp (Sp) = from 21 h 49 min to 22 h 27 min
+
+
+Next Day
+Zi hour = from 22 h 27 min to 00 h 59 min
+Channel = VB (GB)
+ Subhours :
+ C (Ht) = from 22 h 27 min to 23 h 05 min
+ IG (SI) = from 23 h 05 min to 23 h 43 min
+ V (BL) = from 23 h 43 min to 00 h 21 min
+ R (KID) = from 00 h 21 min to 00 h 59 min
+
+
+Chou hour = from 00 h 59 min to 03 h 31 min
+Channel = F (LIV)
+ Subhours :
+ MC (HG) = from 00 h 59 min to 01 h 37 min
+ TR (TB) = from 01 h 37 min to 02 h 15 min
+ VB (GB) = from 02 h 15 min to 02 h 53 min
+ F (LIV) = from 02 h 53 min to 03 h 31 min
+
+
+
+8. to get solar noon :
+
+sn = s.find_solar_noonC(dt)
+
+print sn
+2015-10-14 11:44:06
+
+9. print gregorian and lunar dates, sun and moon data 
+( moon rising and setting can come not on one day and therefore
+be calculated for different days, it's why the date is indicated) :
+
+s.print_datetime(dt)
+
+Gregorian :
+Year : 2015
+month : 11
+day :10
+local time 14:9
+Lunar :
+Year : 2015 year of Goat
+month : 9
+day :29
+Solar time 13:21
+Sun
+Rising : 7:36
+Noon : 12:48
+Setting : 18:2
+Constellation : Libra
+Moon
+Rising : 
+10/11 at 5:57
+Transit : 
+10/11 at 11:43
+Setting : 
+10/11 at 17:24
+Phase : 0.0282576862478
+Constellation : Virgo
+
+calculate colar terms:
+
+s.calc_solar_terms(dt)
+
+print solar terms:
+
+s.print_solar_terms(dt)
+
+you get:
+
+0 vernal equinox 春分 2016-03-20
+15 clear and bright 清明 2016-04-04
+30 grain rain 穀雨 (谷雨) 2016-04-19
+45 summer commences 立夏 2016-05-05
+60 grain full 小滿 (小满) 2016-05-20
+75 grain in ear 芒種 (芒种) 2016-06-05
+90 summer solstice 夏至 2016-06-21
+105 moderate heat 小暑 2016-07-06
+120 great heat 大暑 2016-07-22
+135 autumn commences 立秋 2016-08-07
+150 end of heat 處暑 (处暑) 2016-08-22
+165 white dew 白露 2016-09-07
+180 autumnal equinox 秋分 2016-09-22
+195 cold dew 寒露 2016-10-07
+210 frost 霜降 2016-10-23
+225 winter commences 立冬 2016-11-07
+240 light snow 小雪 2015-11-22
+255 heavy snow 大雪 2015-12-07
+270 winter solstice 冬至 2015-12-22
+285 moderate cold 小寒 2016-01-05
+300 severe cold 大寒 2016-01-20
+315 spring commences 立春 2016-02-04
+330 spring showers 雨水 2016-02-19
+345 insects waken 驚蟄 (惊蛰) 2016-03-05
+
+
+
+10. to define different time and place :
+
+dt1 = datetime.datetime(1984,2,7,12,0)
+
+where 
+
+1984 - years
+2 - month
+7 - day
+12 - hours
+0 - minutes
+
+if nessesary define different location.
+
+it is better to define different stens&brances object with
+
+s1= stemsbranches()
+
+for different location to avoid confusion.
+
+define location:
+
+s1.init_coords('40:42','-74:00',-5,'NY')
+
+init hours for this time and location:
+
+s1.solar_hours(dt1,1)
+
+you get :
+
+Solar noon : 
+1984-02-07 12:10:10.592356
+Sun rising : 
+1984-02-07 07:00:14.654347
+Sun setting : 
+1984-02-07 17:20:36.799265
+Day :
+10:20:22.144918
+Day hour :
+1:43:23.690819
+Previous day setting :
+1984-02-06 17:19:22.870270
+Night :
+13:40:51.784077
+Night hour 1 : 
+2:16:48.630679
+Next day rising :
+1984-02-08 06:59:07.422309
+Next night :
+13:38:30.623044
+Night hour 2 : 
+2:16:25.103840
+Total day duration : 
+1 day, 0:00:03.348478
+
+check coordinates:
+
+s1.print_coords()
+
+you get:
+
+Latitude : 40:42
+Longitude : -74:00
+Timezone (diff to UTC) : -5
+Location : NY
+
+then print stems & branches :
+
+s1.print_stemsbranches(dt1)
+
+you get :
+
+Year stem and branch :
+Jia-Zi
+甲子
+Month stem and branch :
+Bing-Yin
+丙寅
+Day stem and branch :
+Xin-Wei
+辛未
+Hour stem and branch :
+Jia-Wu
+甲午
+
+then print 12 hours:
+
+s1.print_12shichen(dt1,1)
+
+you get :
+
+Zi hour = from 23 h 01 min to 01 h 18 min
+Duration : 2 h 16 min
+Chou hour = from 01 h 18 min to 03 h 35 min
+Duration : 2 h 16 min
+Yin hour = from 03 h 35 min to 05 h 52 min
+Duration : 2 h 16 min
+Mao hour = from 05 h 52 min to 07 h 52 min
+Duration : 2 h 00 min
+Chen hour = from 07 h 52 min to 09 h 35 min
+Duration : 1 h 43 min
+Si hour = from 09 h 35 min to 11 h 19 min
+Duration : 1 h 43 min
+Wu hour = from 11 h 19 min to 13 h 02 min
+Duration : 1 h 43 min
+Wei hour = from 13 h 02 min to 14 h 45 min
+Duration : 1 h 43 min
+Shen hour = from 14 h 45 min to 16 h 29 min
+Duration : 1 h 43 min
+You hour = from 16 h 29 min to 18 h 29 min
+Duration : 1 h 59 min
+Xu hour = from 18 h 29 min to 20 h 45 min
+Duration : 2 h 16 min
+Hai hour = from 20 h 45 min to 23 h 02 min
+Duration : 2 h 16 min
+Next Day
+Zi hour = from 23 h 02 min to 01 h 18 min
+Duration : 2 h 16 min
+Chou hour = from 01 h 18 min to 03 h 34 min
+Duration : 2 h 16 min
+
+to get channels:
+
+s.print_12shichen(dt,2)
+
+
+Zi hour = from 22 h 43 min to 00 h 43 min
+Channel = VB (GB)
+ Subhours :
+ C (Ht) = from 22 h 43 min to 23 h 13 min
+ IG (SI) = from 23 h 13 min to 23 h 43 min
+ V (BL) = from 23 h 43 min to 00 h 13 min
+ R (KID) = from 00 h 13 min to 00 h 43 min
+
+
+Chou hour = from 00 h 43 min to 02 h 43 min
+Channel = F (LIV)
+ Subhours :
+ MC (HG) = from 00 h 43 min to 01 h 13 min
+ TR (TB) = from 01 h 13 min to 01 h 43 min
+ VB (GB) = from 01 h 43 min to 02 h 13 min
+ F (LIV) = from 02 h 13 min to 02 h 43 min
+
+
+Yin hour = from 02 h 43 min to 04 h 43 min
+Channel = P (LU)
+ Subhours :
+ P (LU) = from 02 h 43 min to 03 h 13 min
+ GI (LI) = from 03 h 13 min to 03 h 43 min
+ E (ST) = from 03 h 43 min to 04 h 13 min
+ Rp (Sp) = from 04 h 13 min to 04 h 43 min
+
+
+Mao hour = from 04 h 43 min to 06 h 43 min
+Channel = GI (LI)
+ Subhours :
+ C (Ht) = from 04 h 43 min to 05 h 13 min
+ IG (SI) = from 05 h 13 min to 05 h 43 min
+ V (BL) = from 05 h 43 min to 06 h 13 min
+ R (KID) = from 06 h 13 min to 06 h 43 min
+
+
+Chen hour = from 06 h 43 min to 08 h 43 min
+Channel = E (ST)
+ Subhours :
+ MC (HG) = from 06 h 43 min to 07 h 13 min
+ TR (TB) = from 07 h 13 min to 07 h 43 min
+ VB (GB) = from 07 h 43 min to 08 h 13 min
+ F (LIV) = from 08 h 13 min to 08 h 43 min
+
+
+Si hour = from 08 h 43 min to 10 h 43 min
+Channel = Rp (Sp)
+ Subhours :
+ P (LU) = from 08 h 43 min to 09 h 13 min
+ GI (LI) = from 09 h 13 min to 09 h 43 min
+ E (ST) = from 09 h 43 min to 10 h 13 min
+ Rp (Sp) = from 10 h 13 min to 10 h 43 min
+
+
+Wu hour = from 10 h 43 min to 12 h 43 min
+Channel = C (Ht)
+ Subhours :
+ C (Ht) = from 10 h 43 min to 11 h 13 min
+ IG (SI) = from 11 h 13 min to 11 h 43 min
+ V (BL) = from 11 h 43 min to 12 h 13 min
+ R (KID) = from 12 h 13 min to 12 h 43 min
+
+
+Wei hour = from 12 h 43 min to 14 h 43 min
+Channel = IG (SI)
+ Subhours :
+ MC (HG) = from 12 h 43 min to 13 h 13 min
+ TR (TB) = from 13 h 13 min to 13 h 43 min
+ VB (GB) = from 13 h 43 min to 14 h 13 min
+ F (LIV) = from 14 h 13 min to 14 h 43 min
+
+
+Shen hour = from 14 h 43 min to 16 h 43 min
+Channel = V (BL)
+ Subhours :
+ P (LU) = from 14 h 43 min to 15 h 13 min
+ GI (LI) = from 15 h 13 min to 15 h 43 min
+ E (ST) = from 15 h 43 min to 16 h 13 min
+ Rp (Sp) = from 16 h 13 min to 16 h 43 min
+
+
+You hour = from 16 h 43 min to 18 h 43 min
+Channel = R (KID)
+ Subhours :
+ C (Ht) = from 16 h 43 min to 17 h 13 min
+ IG (SI) = from 17 h 13 min to 17 h 43 min
+ V (BL) = from 17 h 43 min to 18 h 13 min
+ R (KID) = from 18 h 13 min to 18 h 43 min
+
+
+Xu hour = from 18 h 43 min to 20 h 43 min
+Channel = MC (HG)
+ Subhours :
+ MC (HG) = from 18 h 43 min to 19 h 13 min
+ TR (TB) = from 19 h 13 min to 19 h 43 min
+ VB (GB) = from 19 h 43 min to 20 h 13 min
+ F (LIV) = from 20 h 13 min to 20 h 43 min
+
+
+Hai hour = from 20 h 43 min to 22 h 43 min
+Channel = TR (TB)
+ Subhours :
+ P (LU) = from 20 h 43 min to 21 h 13 min
+ GI (LI) = from 21 h 13 min to 21 h 43 min
+ E (ST) = from 21 h 43 min to 22 h 13 min
+ Rp (Sp) = from 22 h 13 min to 22 h 43 min
+
+
+Next Day
+Zi hour = from 22 h 43 min to 00 h 43 min
+Channel = VB (GB)
+ Subhours :
+ C (Ht) = from 22 h 43 min to 23 h 13 min
+ IG (SI) = from 23 h 13 min to 23 h 43 min
+ V (BL) = from 23 h 43 min to 00 h 13 min
+ R (KID) = from 00 h 13 min to 00 h 43 min
+
+
+Chou hour = from 00 h 43 min to 02 h 43 min
+Channel = F (LIV)
+ Subhours :
+ MC (HG) = from 00 h 43 min to 01 h 13 min
+ TR (TB) = from 01 h 13 min to 01 h 43 min
+ VB (GB) = from 01 h 43 min to 02 h 13 min
+ F (LIV) = from 02 h 13 min to 02 h 43 min
+
+
+
+print date amd time information :
+
+s1.print_datetime(dt1)
+
+you get:
+
+Gregorian :
+Year : 1984
+month : 2
+day :7
+local time 12:0
+Lunar :
+Year : 1984 year of Rat
+month : 1
+day :6
+Solar time 11:49
+Sun
+Rising : 6:59
+Noon : 12:10
+Setting : 17:19
+Constellation : Capricornus
+Moon
+Rising : 
+7/2 at 9:53
+Transit : 
+7/2 at 16:16
+Setting : 
+7/2 at 22:49
+Phase : 0.21108665159
+Constellation : Cetus
+
+
+
+
+
+

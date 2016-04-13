@@ -1,0 +1,24 @@
+#
+# "CHANGES" library  - - Documentation -Use in windows system
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, Oleksandr Golovchnsky  2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+( console mode )
+
+
+ 
+1. in windows start pythonwin and press "run script" button to run
+ load_def_sets.py 
+
+2. Enter commands one by one.
+
+3. when saving to and loading from files the full path like :
+   
+   save_to_file(P1,r"C:\Changesv001\p\p1")
+   
+   bagua = load_from_file(r"C:\Changesv001\baguaset3")
+   

@@ -1,0 +1,87 @@
+# -*- coding: utf-8 -*-
+#
+# "CHANGES" library Installation configuration 
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+"CHANGES" library is developed for use in Linux, Mac Os X and Windows. Installation and configuration tipps are given here for each system.
+You need to install support for chinese language in your system,  if you have not done yet.
+
+1. Download and install python 2.7, if it's not already part of you system.
+to check open terminal and type "python" then press enter. 
+If you are going to use the library from terminal install Ipython in linux and mac os, In windows install Pythonwin.
+2. Install gcc, gcc-c++ compilers and dependencies - in mac os x download and install xcode - version sutable for your system version! 
+in windows better use precompiled packages.
+3. Install PyQt4 and dependencies.
+4. Install using pip python packages:
+   dill
+   networkx
+   numpy
+   matplotlib
+   termcolor
+   ephem 
+   lunardate
+   in windows you can use precompiled packages from
+   http://www.lfd.uci.edu/~gohlke/pythonlibs/
+5. Copy Library files into directory ( Linux Macos X):
+  
+  /home/username/Changesv001
+  
+  in windows to
+  
+  C:\Changesv001\
+  
+  add this directory to $PYTHONPATH system variable.
+  
+  in file ElementsT1.py edit 
+  libdir ='/Changesv001'
+  in windows
+  WorkingDirectory = r"C:\Changesv001"
+  SetsDirectory = r"C:\Changesv001"
+  ChImagesDirectory = r"C:\Changesv001\images\channels"
+  PImagesDirectory = r"C:\Changesv001\images\points"
+  correct names/pathes for default sets if nessesary.
+  according to your installation.
+  in file ChangesT1_medical.py edit for windows:
+  PatientsDataDirectory = r"C:\Changesv001\p"
+  PTimagesDirectory = r"C:\Changesv001\p\timg"
+   
+  in file ChangesT1_StemsBranches.py edit coordinates:
+  LAT = '50:27'   # '36:02'
+  LON = '30:31'   # '103:48'   
+  DUTC = 2        # 8              use for places with no DST, for DST places use DUTC = difUTC()
+  PLACE = 'Kiev'  # 'LANZHOU'
+  
+  make sure that your system time setting - date and time and timezone are set correctly!
+  Difference between your system clock and local time should be no more then 1 minut! 
+  this is basic requiement for correct functioning of the Library.
+  
+6. If you are going to use only graphical modules in Linux and Macos X  
+open terminal cd to /home/username/Changesv001
+and type
+python ChLib.py &
+
+this will open the module selector.
+In windows create a shortcut for ChLib.py file and place it on the desctop.
+Double click on it will start the module selector.
+
+7. If you are going to use the Library from the terminal open it 
+cd to /home/username/Changesv001
+and start ipython.
+then you can use command 
+%run load_def_sets.py
+to load default sets.
+
+in windows start pythonwin and press "run script" button to run
+ load_def_sets.py 
+  
+  
+  
+  
+  
+  
+

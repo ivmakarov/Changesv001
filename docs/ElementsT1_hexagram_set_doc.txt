@@ -1,0 +1,372 @@
+#
+# "CHANGES" library  - - Documentation - Trigram and Hexagram sets
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+
+( console mode )
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+
+3. create element group
+
+PP4 = Elements()
+
+to get info about any function applyable to this group:
+
+help(PP4.function_name)
+
+press q to return to command line
+
+4. Show hexagram table
+
+PP4.show_hextable(bagua,Hextable)
+
+you get :
+
+    upper->     ☰ Qian     ☳ Zhen     ☵ Kan     ☶ Gen     ☷ Kun     ☴ Xun     ☲ Li     ☱ Dui
+    lower
+    ☰ Qian      1 ䷀       34 ䷡      5 ䷄       26 ䷙      11 ䷊      9 ䷈       14 ䷍      43 ䷪
+
+    ☳ Zhen      25 ䷘      51 ䷲      3 ䷂       27 ䷚      24 ䷗      42 ䷩      21 ䷔      17 ䷐
+
+    ☵ Kan       6 ䷅       40 ䷧      29 ䷜      4 ䷃       7 ䷆       59 ䷺      64 ䷿      47 ䷮
+
+    ☶ Gen       33 ䷠      62 ䷽      39 ䷦      52 ䷳      15 ䷎      53 ䷴      56 ䷷      31 ䷞
+
+    ☷ Kun       12 ䷋      16 ䷏      8 ䷇       23 ䷖      2 ䷁       20 ䷓      35 ䷢      45 ䷬
+
+    ☴ Xun       44 ䷫      32 ䷟      48 ䷯      18 ䷑      46 ䷭      57 ䷸      50 ䷱      28 ䷛
+
+    ☲ Li        13 ䷌      55 ䷶      63 ䷾      22 ䷕      36 ䷣      37 ䷤      30 ䷝      49 ䷰
+
+    ☱ Dui       10 ䷉      54 ䷵      60 ䷻      41 ䷨      19 ䷒      61 ䷼      38 ䷥      58 ䷹
+    
+    
+ PP4.print_by_Number(35,Hextable)
+ 
+ you get:
+ 
+   Jin           
+  35           
+      ䷢           
+      晉           
+    -----   
+    -- --   
+    -----   
+    -- --   
+    -- --   
+    -- --   
+      晉           
+                 
+      Jin           
+      Advancing           
+      Цзинь           
+      продвижение           
+
+
+
+
+
+
+5. enter hexagram by gua:
+
+PP4.add_from_gua("h1","Kan","Xun",bagua)
+
+possible to add by number
+
+PP4.add_byN_from_set("h55",55, Hextable)
+
+
+print PP4("h1")
+
+    h1           
+    -----   
+    -----   
+    -- --   
+    -- --   
+    -----   
+    -- --   
+
+6. find it in the hexagram set and add from there basic info:
+
+PP4.find_in_set("h1","h1",Hextable)
+
+print PP4("h1")
+
+   h1           
+  59           
+      ䷺           
+      渙           
+    -----   
+    -----   
+    -- --   
+    -- --   
+    -----   
+    -- --   
+      渙           
+                 
+      Huan           
+      Dispertion           
+      Хуань           
+      рассеивание     
+      
+ add floating yao:
+ 
+ PP4.add_float_yao("h1",3)
+
+ print PP4("h1")
+    h1           
+  59           
+      ䷺           
+      渙           
+    -----   
+    -----   
+    -- --   
+    -- -- o   
+    -----   
+    -- --   
+      渙           
+                 
+      Huan           
+      Dispertion           
+      Хуань           
+      рассеивание     
+      
+  delete floating yao
+  
+  PP4.del_float_yao("h1")
+
+  
+
+7. form nuclear :
+
+PP4.nuclear("h1","nuch1")
+
+print PP4("nuch1")
+    nuch1           
+    -----   
+    -- --   
+    -- --   
+    -- --   
+    -- --   
+    -----   
+
+    add info: 
+    
+    PP4.find_in_set("nuch1","nuch1",Hextable)
+    
+print PP4("nuch1")
+    nuch1           
+  27           
+      ䷚           
+      頤           
+    -----   
+    -- --   
+    -- --   
+    -- --   
+    -- --   
+    -----   
+      頤           
+                 
+      Yi           
+      Jaws           
+      И           
+      питание           
+
+8. change one yao:
+
+PP4.change_yao("h1","h1_2yc",2)
+
+ print PP4("h1_2yc")
+    h1_2yc           
+    -----   
+    -----   
+    -- --   
+    -- --   
+    -- --   
+    -- --   
+
+8. or change all jaos by 1 and add 8 hexagrams to the sets
+
+PP4.changeYao_set("h1")
+
+
+9. add basic info to all hexagrams :
+
+PP4.all_add_info_from_set(Hextable)
+
+
+print PP4
+    nuch1           
+  27           
+      ䷚           
+      頤           
+    -----   
+    -- --   
+    -- --   
+    -- --   
+    -- --   
+    -----   
+      頤           
+                 
+      Yi           
+      Jaws           
+      И           
+      питание           
+
+    h1 3d yao changed           
+  57           
+      ䷸           
+      巽           
+    -----   
+    -----   
+    -- --   
+    -----   
+    -----   
+    -- --   
+      巽           
+                 
+      Sunn           
+      Wind           
+      Сюнь           
+      ветер проникновение           
+
+    h1           
+  59           
+      ䷺           
+      渙           
+    -----   
+    -----   
+    -- --   
+    -- --   
+    -----   
+    -- --   
+      渙           
+                 
+      Huan           
+      Dispertion           
+      Хуань           
+      рассеивание           
+
+    h1_2yc           
+  20           
+      ䷓           
+      觀           
+    -----   
+    -----   
+    -- --   
+    -- --   
+    -- --   
+    -- --   
+      觀           
+                 
+      Guan           
+      Observation           
+      Гуань           
+      наблюдение           
+
+    h1 4th yao changed           
+  6           
+      ䷅           
+      訟           
+    -----   
+    -----   
+    -----   
+    -- --   
+    -----   
+    -- --   
+      訟           
+                 
+      Song           
+      Lawsuit           
+      Сун           
+      тяжба           
+
+    h1 top yao changed           
+  29           
+      ䷜           
+      坎            
+    -- --   
+    -----   
+    -- --   
+    -- --   
+    -----   
+    -- --   
+      坎            
+                 
+      Kan           
+      Water           
+      Кань           
+      яма           
+
+    h1 2nd yao changed           
+  20           
+      ䷓           
+      觀           
+    -----   
+    -----   
+    -- --   
+    -- --   
+    -- --   
+    -- --   
+      觀           
+                 
+      Guan           
+      Observation           
+      Гуань           
+      наблюдение           
+
+    h1 1st yao changed           
+  61           
+      ䷼           
+      中孚           
+    -----   
+    -----   
+    -- --   
+    -- --   
+    -----   
+    -----   
+      中孚           
+                 
+      Zhongfu           
+      Central Sincerity           
+      Чжун-фу           
+      Срединная искренность           
+
+    h1 5th yao changed           
+  4           
+      ䷃           
+      蒙           
+    -----   
+    -- --   
+    -- --   
+    -- --   
+    -----   
+    -- --   
+      蒙           
+                 
+      Meng           
+      Underdeveloped           
+      Менг           
+      недоразвитое           
+
+total elements:9
+
+
+
+
+

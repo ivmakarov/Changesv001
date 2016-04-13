@@ -1,0 +1,139 @@
+#
+# "CHANGES" library  - - Documentation - Relationships example
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+  
+( console mode )
+
+1. first load library and default sets:
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+ 
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+
+
+
+2. Create Relationships pool:
+  
+  R = RELationships()
+  
+3. Add Relarionship "WenWang", 1-directed , 0 - not:
+
+  R.add("WenWang",1)
+  
+4. One can assign numbers to elements and add them one by one :
+
+R.add_NEl('WenWang',bagua,1,'Zhen')
+R.add_NEl('WenWang',bagua,2,'Xun')
+R.add_NEl('WenWang',bagua,3,'Li')
+R.add_NEl('WenWang',bagua,4,'Kun')
+R.add_NEl('WenWang',bagua,5,'Dui')
+R.add_NEl('WenWang',bagua,6,'Qian')
+R.add_NEl('WenWang',bagua,7,'Kan')
+R.add_NEl('WenWang',bagua,8,'Gen')
+
+5. add directed circular link :
+
+ R.circ_1toNLink('WenWang',1,8,1,'generates','lime')
+ 
+
+6. Check elements:
+
+  R.Relatioships["WenWang"].elements
+  
+  you get:
+  
+  {'Dui': <ElementsT1.Element at 0x4d292d0>,
+ 'Gen': <ElementsT1.Element at 0x4d29510>,
+ 'Kan': <ElementsT1.Element at 0x4d29350>,
+ 'Kun': <ElementsT1.Element at 0x4d293d0>,
+ 'Li': <ElementsT1.Element at 0x4d29490>,
+ 'Qian': <ElementsT1.Element at 0x4d29290>,
+ 'Xun': <ElementsT1.Element at 0x4d29410>,
+ 'Zhen': <ElementsT1.Element at 0x4d29390>}
+
+ 
+
+ 
+7. Check links:
+
+  R.Relatioships["WenWang"].links
+  
+  
+  you get :
+  
+  {'Dui Qian': <ElementsT1.Link at 0x4d29750>,
+ 'Gen Zhen': <ElementsT1.Link at 0x4d29850>,
+ 'Kan Gen': <ElementsT1.Link at 0x4d29810>,
+ 'Kun Dui': <ElementsT1.Link at 0x4d29790>,
+ 'Li Kun': <ElementsT1.Link at 0x4d29610>,
+ 'Qian Kan': <ElementsT1.Link at 0x4d297d0>,
+ 'Xun Li': <ElementsT1.Link at 0x4d29990>,
+ 'Zhen Xun': <ElementsT1.Link at 0x4d295d0>}
+ 
+8. Plot it :
+
+R.plot_circular('WenWang',np.pi,-1,8,'generates','lime','steelblue')
+
+
+where 
+
+'WenWang' - relationship name
+np.pi - starting point
+-1 - direction clockwise
+8 - number of elements
+'generates' - type of the link
+'lime' - color of the link
+'steelblue' - color of the elements
+
+9. save it :
+
+save_to_file(R,'WWrel1')
+
+10. and load :
+
+R = load_from_file('WWrel1')
+
+11. create another relationship:
+
+R.add("FuHsi",1)
+
+12. add elements in order :
+
+R.add_NEl('FuHsi',bagua,1,'Qian')
+
+R.add_NEl('FuHsi',bagua,2,'Xun')
+
+R.add_NEl('FuHsi',bagua,3,'Kan')
+
+R.add_NEl('FuHsi',bagua,4,'Gen')
+
+R.add_NEl('FuHsi',bagua,5,'Kun')
+
+R.add_NEl('FuHsi',bagua,6,'Zhen')
+
+R.add_NEl('FuHsi',bagua,7,'Li')
+
+R.add_NEl('FuHsi',bagua,8,'Dui')
+
+13. add circular link :
+
+R.circ_1toNLink('FuHsi',1,8,1,'generates','tomato')
+
+14. display it :
+
+R.plot_circular('FuHsi',np.pi/2,-1,8,'generates','tomato')
+
+

@@ -1,0 +1,46 @@
+#
+# "CHANGES" library  - - Documentation - Comparison operations
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+( console mode )
+
+comparison functions take the elements as argument and return 1 or 0 and function calls can be used as boolean in
+"if" and similar operators.
+
+1. compare_Els( El1, El2)
+
+compare elements El1 and El2 if they have the same Yaos returns 1 otherwise 0
+
+2. if_El_hex(El)
+
+If El is a hexagram returns 1 otherwise 0
+
+3. if_El_gua(El)
+
+If El is a trigram returns 1 otherwise 0
+
+4. if_El_duo(El)
+
+If El is a duogram returns 1 otherwise 0
+
+5. if_El_equal_gua(El)
+
+if El has equal upper and lower gua returns 1 otherwise 0
+
+6. if_El_opp_gua(El)
+
+if El has opposite upper and lower gua returns 1 otherwise 0
+
+7. if_El_mirror_gua(El)
+
+if El has mirrored upper and lower gua returns 1 otherwise 0
+
+8. if_El_mirror_opp_gua(El)
+
+if El has opposite mirrored upper and lower gua returns 1 otherwise 0
+

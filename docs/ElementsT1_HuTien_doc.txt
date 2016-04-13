@@ -1,0 +1,92 @@
+#
+# "CHANGES" library  - - Documentation - Hu Tien Devination
+#		
+#
+#  brings chinese philosophy to life
+#
+# (C) Ivan Makarov, 2015-2016
+# Email: ivmakarov@yahoo.com
+#
+
+
+( console mode )
+
+1. first load library and default sets:
+
+start console and type :
+
+ipython 
+
+after Ipython started type :
+
+ %run load_def_sets.py
+ 
+ (in windows start pythonwin and press "run script" button to run
+ load_def_sets.py )
+
+2. create element group :
+
+P = Elements()
+
+3. Define event trigram and direction trigram, consult if nessesary bagua properties, and call
+
+P.HuTien('h1','Qian','Xun',4,3,bagua,Hextable)
+
+where 'h1' - resulting hexagram name
+
+'Qian' - upper ( event ) trigram
+'Xun' - lower ( direction ) trigram
+4 - hour in format (1-24)
+3- deviner position (1-sitting,2-standing,3-moving)
+bagua - bagua set
+Hextable - hexagram sets
+
+you get :
+
+result : 
+
+    h1           
+  44           
+      ䷫           
+      姤           
+    -----     
+    -----     
+    ----- x   
+    -----     
+    -----     
+    -- --     
+      姤           
+                 
+      Gou           
+      Meeting           
+      Гоу           
+      встреча           
+
+expectation time: 5.0 days.
+
+the result predicted by the hexagram may occur in 5 days.
+
+4. change floating yao:
+
+P.change_float_print('h1','Ch1',Hextable)
+
+you get:
+
+  Ch1           
+  57           
+      ䷸           
+      巽           
+    -----     
+    -----     
+    -- --     
+    -----     
+    -----     
+    -- --     
+      巽           
+                 
+      Sunn           
+      Wind           
+      Сюнь           
+      ветер проникновение           
+
+
