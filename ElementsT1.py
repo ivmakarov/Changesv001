@@ -58,9 +58,9 @@ liangyiLName = SetsDirectory+"/liangyi5"
 
 sixiangLName = SetsDirectory+"/sixiang5"
 
-baguaLName = SetsDirectory+"/baguaQ8"
+baguaLName = SetsDirectory+"/baguaQ9R"
 
-HextableLName  = SetsDirectory+"/hextable26AN"
+HextableLName  = SetsDirectory+"/hextable27R"
 
 wuxingLName = SetsDirectory+'/wuxing2'
 
@@ -80,19 +80,19 @@ liangyiWName = r"C:\Changesv001\liangyi5"
 
 sixiangWName = r"C:\Changesv001\sixiang5"
 
-baguaWName = r"C:\Changesv001\baguaQ8"
+baguaWName = r"C:\Changesv001\baguaQ9R"
 
-HextableWName  = r"C:\Changesv001\hextable26AN"
+HextableWName  = r"C:\Changesv001\hextable27R"
 
 wuxingWName = r"C:\Changesv001\wuxing2"
 
-stemsWName = r"C:\Changesv001\stems2"
+stemsWName = r"C:\Changesv001\stems3"
 
 branchesWName = r"C:\Changesv001\branches3"
 
-channelsWName = r"C:\Changesv001\channels3"
+channelsWName = r"C:\Changesv001\channels4"
 
-pointsWName = r"C:\Changesv001\points1"
+pointsWName = r"C:\Changesv001\points4"
 
 
 
