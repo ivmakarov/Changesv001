@@ -78,6 +78,9 @@ to load default sets.
 
 in windows start pythonwin and press "run script" button to run
  load_def_sets.py 
+ 
+8. In Windows the endlines in the documentation files in the /docs subdirectory should be changed to the windows endlines.
+
   
   
   
