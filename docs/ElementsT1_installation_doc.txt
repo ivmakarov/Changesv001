@@ -81,6 +81,8 @@ in windows start pythonwin and press "run script" button to run
  
 8. In Windows the endlines in the documentation files in the /docs subdirectory should be changed to the windows endlines.
 
+9. In Windows if you are using antivirus/firewall you need to allow "Python".
+
   
   
   
